@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бекзада апа — 70 жас</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* VOICE: тёплый, торжественный, семейный
+   IDEA: золотая той-открытка, которую листают вниз
+   PICTURE: золотой шаңырақ с орнаментом қошқар мүйіз
+   COLOUR and TYPE: бордо, золото, сливочный текст; Cormorant Garamond + Montserrat
+   LAYOUT: одна колонка, секции-карточки на бордовом поле */
+:root{color-scheme:dark;--bg:#4f0d1b;--bg2:#5f1222;--gold:#d9b56c;--gold2:#f0d79a;--ink:#f6ead3;--soft:#e3cfae}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Montserrat,system-ui,sans-serif;overflow-x:clip}
+body.ru [lang=kk],body:not(.ru) [lang=ru]{display:none}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.lang{position:fixed;top:14px;right:14px;z-index:5;display:flex;border:1px solid var(--gold);border-radius:999px;overflow:hidden;background:rgba(79,13,27,.85)}
+.lang button{all:unset;cursor:pointer;padding:10px 14px;min-height:24px;font-size:13px;font-weight:600;color:var(--gold)}
+.lang button[aria-pressed=true]{background:var(--gold);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--gold2);outline-offset:-4px}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:72px 20px 48px;position:relative;background:radial-gradient(ellipse at 50% 38%,#6e1528 0%,var(--bg) 62%)}
+.hero svg.shan{width:min(62vw,300px);height:auto}
+.kicker{margin:0;font-size:14px;font-weight:600;color:var(--gold);letter-spacing:.05em}
+.name{margin:0;font-size:clamp(64px,17vw,120px);line-height:1;font-weight:700;color:var(--gold);text-wrap:balance}
+.age{display:flex;align-items:center;gap:18px;color:var(--gold)}
+.age span.line{width:64px;height:1px;background:var(--gold)}
+.age b{font-size:clamp(72px,18vw,128px);line-height:.95;font-weight:600}
+.sub{margin:0;font-size:clamp(22px,5vw,30px);font-style:italic;color:var(--ink)}
+.date{margin:6px 0 0;font-size:18px;font-weight:500;color:var(--soft);white-space:nowrap}
+.down{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--gold);animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+@media(prefers-reduced-motion:reduce){.down{animation:none}}
+.band{padding:clamp(40px,7vw,72px) max(5vw,16px);display:flex;justify-content:center}
+.card{width:100%;max-width:640px;text-align:center;border:1px solid var(--gold);outline:1px solid rgba(217,181,108,.45);outline-offset:6px;padding:clamp(28px,6vw,48px) clamp(18px,5vw,44px);background:var(--bg2);position:relative}
+h2{margin:0 0 18px;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,7vw,44px);line-height:1.05;font-weight:700;color:var(--gold);text-wrap:balance}
+.greet{margin:0 0 16px;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(24px,5.5vw,30px);line-height:1.3}
+.card p{margin:0 0 12px;font-size:17px}
+.orn{display:block;margin:0 auto 14px;width:120px;height:auto}
+.timer{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.timer div{border:1px solid rgba(217,181,108,.6);padding:14px 4px}
+.timer b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(34px,9vw,52px);line-height:1;color:var(--gold2);font-variant-numeric:tabular-nums}
+.timer small{font-size:13px;color:var(--soft)}
+.info{display:grid;gap:18px}
+.info .lbl{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.05em}
+.info .val{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(26px,6vw,32px);font-weight:700;line-height:1.2}
+.info .val small{display:block;font-family:Montserrat,sans-serif;font-size:16px;font-weight:400;color:var(--soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 26px;border-radius:999px;background:var(--gold);color:var(--bg);font:600 16px Montserrat,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--gold2)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+form{display:grid;gap:16px;text-align:start;margin-top:8px}
+label.f{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--gold)}
+input[type=text],input[type=number]{width:100%;min-height:48px;padding:10px 14px;font:16px Montserrat,sans-serif;color:var(--ink);background:var(--bg);border:1px solid rgba(217,181,108,.7);border-radius:8px}
+input:focus-visible{outline:2px solid var(--gold2);outline-offset:1px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.opt{display:flex;align-items:center;gap:12px;min-height:48px;padding:8px 14px;border:1px solid rgba(217,181,108,.5);border-radius:8px;cursor:pointer;font-size:16px}
+.opt:has(input:checked){border-color:var(--gold);background:rgba(217,181,108,.14)}
+.opt input{accent-color:var(--gold);width:20px;height:20px;margin:0}
+.err{color:#ffb4a8;font-size:14px;min-height:1em;margin:0}
+.done{display:none;text-align:center}
+.hosts{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(32px,8vw,44px);color:var(--gold);margin:6px 0 0}
+footer{text-align:center;padding:8px 16px 40px;font-size:13px;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="lang" role="group" aria-label="Тіл / Язык">
+  <button type="button" id="bKk" aria-pressed="true">ҚАЗ</button>
+  <button type="button" id="bRu" aria-pressed="false">РУС</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="horn" fill="none" stroke="#d9b56c" stroke-width="2.2" stroke-linecap="round">
+      <path d="M60 56 C60 36 46 24 32 27 C20 30 18 46 28 48 C36 50 38 40 32 38"/>
+      <path d="M60 56 C60 36 74 24 88 27 C100 30 102 46 92 48 C84 50 82 40 88 38"/>
+      <path d="M60 56 V16"/><path d="M54 22 L60 14 L66 22"/>
+      <circle cx="60" cy="9" r="2.6" fill="#d9b56c"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="hero">
+  <svg class="shan" viewBox="0 0 240 240" role="img" aria-label="Шаңырақ">
+    <g stroke="#d9b56c" fill="none" stroke-linecap="round">
+      <g stroke-width="1.4" opacity=".75" id="uyk"></g>
+      <circle cx="120" cy="120" r="72" stroke-width="5"/>
+      <circle cx="120" cy="120" r="62" stroke-width="1.5"/>
+      <clipPath id="cl"><circle cx="120" cy="120" r="62"/></clipPath>
+      <g clip-path="url(#cl)" stroke-width="4">
+        <path d="M40 98 Q120 60 200 98"/><path d="M40 120 Q120 82 200 120"/><path d="M40 142 Q120 104 200 142"/>
+        <path d="M98 40 Q60 120 98 200"/><path d="M120 40 Q82 120 120 200"/><path d="M142 40 Q104 120 142 200"/>
+      </g>
+      <circle cx="120" cy="120" r="84" stroke-width="1" stroke-dasharray="2 6"/>
+    </g>
+  </svg>
+  <p class="kicker"><span lang="kk">Мерейтойға шақыру</span><span lang="ru">Приглашение на юбилей</span></p>
+  <h1 class="name serif">Бекзада</h1>
+  <div class="age serif" aria-label="70"><span class="line"></span><b>70</b><span class="line"></span></div>
+  <p class="sub serif"><span lang="kk">жас мерейтой</span><span lang="ru">лет — юбилей</span></p>
+  <p class="date">12.12.2026 · <span lang="kk">сенбі</span><span lang="ru">суббота</span></p>
+  <svg class="down" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+</header>
+
+<section class="band">
+  <div class="card">
+    <svg class="orn" viewBox="0 0 120 60" aria-hidden="true"><use href="#horn"/></svg>
+    <div lang="kk">
+      <p class="greet">Құрметті ағайын-туыс, құда-жекжат, дос-жарандар!</p>
+      <p>Сіздерді аяулы апамыз Бекзаданың 70 жасқа толу мерейтойына арналған салтанатты ақ дастарқанымыздың қадірлі қонағы болуға шақырамыз!</p>
+    </div>
+    <div lang="ru">
+      <p class="greet">Дорогие родные, сваты, друзья!</p>
+      <p>Приглашаем вас стать почётными гостями праздничного дастархана в честь 70-летнего юбилея нашей дорогой апы Бекзады!</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="card">
+    <h2><span lang="kk">Тойға дейін</span><span lang="ru">До тоя осталось</span></h2>
+    <div class="timer" id="timer">
+      <div><b id="tD">00</b><small><span lang="kk">күн</span><span lang="ru">дней</span></small></div>
+      <div><b id="tH">00</b><small><span lang="kk">сағат</span><span lang="ru">часов</span></small></div>
+      <div><b id="tM">00</b><small><span lang="kk">минут</span><span lang="ru">минут</span></small></div>
+      <div><b id="tS">00</b><small><span lang="kk">секунд</span><span lang="ru">секунд</span></small></div>
+    </div>
+    <p id="tDone" class="greet" style="display:none;margin-top:16px"><span lang="kk">Той басталды!</span><span lang="ru">Той начался!</span></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="card">
+    <h2><span lang="kk">Той қашан және қайда</span><span lang="ru">Когда и где</span></h2>
+    <div class="info">
+      <div><div class="lbl"><span lang="kk">Күні</span><span lang="ru">Дата</span></div>
+        <div class="val"><span lang="kk">12 желтоқсан 2026</span><span lang="ru">12 декабря 2026</span><small><span lang="kk">сенбі</span><span lang="ru">суббота</span></small></div></div>
+      <div><div class="lbl"><span lang="kk">Уақыты</span><span lang="ru">Время</span></div>
+        <div class="val">12:00<small><span lang="kk">күндіз</span><span lang="ru">днём</span></small></div></div>
+      <div><div class="lbl"><span lang="kk">Мекенжайы</span><span lang="ru">Адрес</span></div>
+        <div class="val"><span lang="kk">Тараз қаласы,<br>Жамбыл даңғылы, 11А</span><span lang="ru">г. Тараз,<br>проспект Жамбыла, 11А</span></div></div>
+      <div><a class="btn" href="https://2gis.kz/taraz/search/%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%96%D0%B0%D0%BC%D0%B1%D1%8B%D0%BB%D0%B0%2011%D0%90" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span lang="kk">2GIS картасынан ашу</span><span lang="ru">Открыть в 2GIS</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="card">
+    <h2><span lang="kk">Келетініңізді растаңыз</span><span lang="ru">Подтвердите участие</span></h2>
+    <p><span lang="kk">Той иелеріне жауабыңызды қалдырыңыз.</span><span lang="ru">Оставьте, пожалуйста, ответ хозяевам тоя.</span></p>
+    <form id="rsvp" novalidate>
+      <label class="f" for="gName"><span><span lang="kk">Аты-жөніңіз</span><span lang="ru">Ваше имя</span></span>
+        <input type="text" id="gName" autocomplete="name"></label>
+      <fieldset>
+        <legend><span lang="kk">Келесіз бе?</span><span lang="ru">Вы придёте?</span></legend>
+        <label class="opt"><input type="radio" name="att" value="1" checked><span><span lang="kk">Иә, келемін</span><span lang="ru">Да, приду</span></span></label>
+        <label class="opt"><input type="radio" name="att" value="2"><span><span lang="kk">Жұбайыммен келемін</span><span lang="ru">Приду с супругом(ой)</span></span></label>
+        <label class="opt"><input type="radio" name="att" value="0"><span><span lang="kk">Өкінішке қарай, келе алмаймын</span><span lang="ru">К сожалению, не смогу</span></span></label>
+      </fieldset>
+      <label class="f" for="gCount" id="countWrap"><span><span lang="kk">Қонақ саны</span><span lang="ru">Количество гостей</span></span>
+        <input type="number" id="gCount" min="1" max="20" value="1" inputmode="numeric"></label>
+      <p class="err" id="err" aria-live="polite"></p>
+      <button class="btn" type="submit" id="sendBtn"><span lang="kk">Жіберу</span><span lang="ru">Отправить</span></button>
+    </form>
+    <div class="done" id="done" aria-live="polite">
+      <p class="greet"><span lang="kk">Рахмет! Жауабыңыз қабылданды.</span><span lang="ru">Спасибо! Ваш ответ принят.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="card">
+    <svg class="orn" viewBox="0 0 120 60" aria-hidden="true"><use href="#horn"/></svg>
+    <p><span lang="kk">Қуанышымызды бірге бөлісейік!</span><span lang="ru">Разделите с нами нашу радость!</span></p>
+    <p style="margin-top:18px;font-size:13px;font-weight:600;color:var(--gold)"><span lang="kk">Той иелері</span><span lang="ru">Хозяева тоя</span></p>
+    <p class="hosts"><span lang="kk">Қуандық және балалары</span><span lang="ru">Қуандық и дети</span></p>
+  </div>
+</section>
+<footer>12.12.2026 · Тараз</footer>
+
+<script>
+{
+  // Google Apps Script web app URL (…/exec) — осы жерге қойыңыз / вставьте сюда:
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGZx9DdfjO3DawEq1thweAdOBQFBZNxwyF67-9MY9q7tOClRzsnnrzw4iYLpqA3uil4w/exec';
+  const root = document.body;
+  const bKk = document.getElementById('bKk'), bRu = document.getElementById('bRu');
+  const setLang = (l) => {
+    root.classList.toggle('ru', l === 'ru');
+    document.documentElement.lang = l === 'ru' ? 'ru' : 'kk';
+    bKk.setAttribute('aria-pressed', l !== 'ru'); bRu.setAttribute('aria-pressed', l === 'ru');
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  bKk.addEventListener('click', () => setLang('kk'));
+  bRu.addEventListener('click', () => setLang('ru'));
+  try { if (localStorage.getItem('lang') === 'ru') setLang('ru'); } catch (e) {}
+
+  const uyk = document.getElementById('uyk');
+  let lines = '';
+  for (let i = 0; i < 36; i++) {
+    const a = i * Math.PI / 18, c = Math.cos(a), s = Math.sin(a);
+    lines += `<line x1="${120 + 76 * c}" y1="${120 + 76 * s}" x2="${120 + 116 * c}" y2="${120 + 116 * s}"/>`;
+  }
+  uyk.innerHTML = lines;
+
+  const target = new Date('2026-12-12T12:00:00+05:00').getTime();
+  const pad = (n) => String(n).padStart(2, '0');
+  const ids = ['tD', 'tH', 'tM', 'tS'].map((id) => document.getElementById(id));
+  const tick = () => {
+    let d = Math.max(0, Math.floor((target - Date.now()) / 1000));
+    const v = [Math.floor(d / 86400), Math.floor(d % 86400 / 3600), Math.floor(d % 3600 / 60), d % 60];
+    v.forEach((x, i) => ids[i].textContent = pad(x));
+    if (d === 0) { document.getElementById('timer').style.display = 'none'; document.getElementById('tDone').style.display = 'block'; clearInterval(timerId); }
+  };
+  let timerId = null;
+  tick(); timerId = setInterval(tick, 1000);
+
+  const form = document.getElementById('rsvp'), err = document.getElementById('err');
+  const countWrap = document.getElementById('countWrap'), gCount = document.getElementById('gCount');
+  form.addEventListener('change', () => {
+    const att = form.att.value;
+    countWrap.style.display = att === '0' ? 'none' : 'grid';
+    if (att === '2' && +gCount.value < 2) gCount.value = 2;
+  });
+  const sendBtn = document.getElementById('sendBtn');
+  const ANSWERS = { '1': 'Келеді', '2': 'Жұбайымен келеді', '0': 'Келмейді' };
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const ru = root.classList.contains('ru');
+    const name = document.getElementById('gName').value.trim();
+    if (!name) { err.textContent = ru ? 'Пожалуйста, укажите имя.' : 'Аты-жөніңізді жазыңыз.'; return; }
+    if (!SCRIPT_URL) { err.textContent = ru ? 'Форма ещё не подключена.' : 'Форма әлі қосылмаған.'; return; }
+    err.textContent = '';
+    const att = form.att.value;
+    const n = att === '0' ? 0 : Math.max(1, Math.min(20, parseInt(gCount.value, 10) || 1));
+    const body = new URLSearchParams({ name: name.slice(0, 100), answer: ANSWERS[att], count: String(n), lang: ru ? 'ru' : 'kk' });
+    sendBtn.disabled = true;
+    try {
+      // no-cors: жауапты оқи алмаймыз, бірақ жол кестеге жазылады
+      await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body });
+      form.style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+    } catch (x) {
+      err.textContent = ru ? 'Не удалось отправить. Проверьте интернет и попробуйте ещё раз.' : 'Жіберілмеді. Интернетті тексеріп, қайталап көріңіз.';
+      sendBtn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>
